@@ -28,9 +28,6 @@ jobs:
       env:
         NODE_ENV: production
         
-    - name: Copy production index.html
-      run: cp index.prod.html dist/index.html
-        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
