@@ -26,17 +26,9 @@ jobs:
       env:
         NODE_ENV: production
         
-    - name: Move files to root
-      run: |
-        # Move built files to root
-        cp -r dist/* ./
-        # Remove dist directory
-        rm -rf dist/
-        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
-        exclude_assets: 'src,node_modules,.git,.github,design,public,dist'
+        publish_dir: ./dist
