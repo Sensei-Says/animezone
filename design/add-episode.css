@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.logo span {
+    color: #ff0066;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+.nav a:hover {
+    color: #ff0066;
+}
+
+/* === Основная форма === */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px 5%;
+}
+
+.form-container {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-container h1 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.subtitle {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #121212;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 1rem;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #ff0066;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* === Источники === */
+.video-sources {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 25px;
+}
+
+.video-sources h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-left: 4px solid #ff0066;
+    padding-left: 10px;
+}
+
+.hint {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.source-item {
+    background: #141414;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+.add-btn {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.add-btn:hover {
+    background: #ff0066;
+}
+
+/* === Сохранение === */
+.submit-btn {
+    background: #ff0066;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+    float: right;
+    transition: background 0.3s, transform 0.2s;
+}
+.submit-btn:hover {
+    background: #e6005c;
+    transform: translateY(-2px);
+}
+
+/* 📱 Адаптив */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 25px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .submit-btn {
+        width: 100%;
+        float: none;
+    }
+}

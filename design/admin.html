@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админ-панель | AnimeZone</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo">Admin<span>Zone</span></div>
+    <nav class="menu">
+      <a href="#" class="active">📊 Главная</a>
+      <a href="#">🎞 Аниме</a>
+      <a href="#">👥 Пользователи</a>
+      <a href="#">💬 Комментарии</a>
+      <a href="#">⚙️ Настройки</a>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <header class="header">
+      <h1>Панель управления</h1>
+      <div class="admin-info">
+        <span>Admin</span>
+        <img src="https://i.imgur.com/wvxPV9S.png" alt="Admin Avatar" />
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="stats">
+        <div class="card">
+          <h3>Аниме</h3>
+          <p>128</p>
+        </div>
+        <div class="card">
+          <h3>Пользователи</h3>
+          <p>4 532</p>
+        </div>
+        <div class="card">
+          <h3>Просмотры</h3>
+          <p>98 245</p>
+        </div>
+        <div class="card">
+          <h3>Комментарии</h3>
+          <p>812</p>
+        </div>
+      </section>
+
+      <section class="anime-table">
+        <div class="table-header">
+          <h2>Список аниме</h2>
+          <button class="add-btn">+ Добавить аниме</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Название</th>
+              <th>Жанр</th>
+              <th>Рейтинг</th>
+              <th>Год</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#001</td>
+              <td>Attack on Titan</td>
+              <td>Экшен, Драма</td>
+              <td>9.4</td>
+              <td>2013</td>
+              <td>
+                <button class="edit">✏️</button>
+                <button class="delete">🗑️</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#002</td>
+              <td>Demon Slayer</td>
+              <td>Фэнтези, Боевик</td>
+              <td>9.0</td>
+              <td>2019</td>
+              <td>
+                <button class="edit">✏️</button>
+                <button class="delete">🗑️</button>
+              </td>
+            </tr>
+            <tr>
+              <td>#003</td>
+              <td>Jujutsu Kaisen</td>
+              <td>Сёнен, Мистика</td>
+              <td>8.8</td>
+              <td>2020</td>
+              <td>
+                <button class="edit">✏️</button>
+                <button class="delete">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="form-section">
+        <h2>Добавить новое аниме</h2>
+        <form>
+          <div class="form-group">
+            <label>Название</label>
+            <input type="text" placeholder="Введите название аниме" required />
+          </div>
+          <div class="form-group">
+            <label>Жанры</label>
+            <input type="text" placeholder="Экшен, Драма, Фэнтези" />
+          </div>
+          <div class="form-group">
+            <label>Год выпуска</label>
+            <input type="number" placeholder="2025" />
+          </div>
+          <div class="form-group">
+            <label>Постер (URL)</label>
+            <input type="url" placeholder="https://..." />
+          </div>
+          <div class="form-group">
+            <label>Описание</label>
+            <textarea rows="4" placeholder="Краткое описание сюжета"></textarea>
+          </div>
+          <button type="submit" class="save-btn">💾 Сохранить</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

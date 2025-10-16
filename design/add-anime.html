@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Добавить аниме | AnimeZone</title>
+  <link rel="stylesheet" href="add-anime.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Anime<span>Zone</span></div>
+    <nav class="nav">
+      <a href="admin.html">← Назад в панель</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="form-container">
+      <h1>Добавить новое аниме</h1>
+      <p class="subtitle">Заполни все поля, чтобы добавить аниме в базу данных</p>
+
+      <form class="anime-form">
+        <div class="form-group">
+          <label>Название</label>
+          <input type="text" placeholder="Например: Attack on Titan" required />
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Год выпуска</label>
+            <input type="number" placeholder="2013" />
+          </div>
+
+          <div class="form-group">
+            <label>Рейтинг (0–10)</label>
+            <input type="number" step="0.1" min="0" max="10" placeholder="9.4" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Жанры</label>
+          <input type="text" placeholder="Экшен, Драма, Фэнтези" />
+        </div>
+
+        <div class="form-group">
+          <label>Постер (URL)</label>
+          <input type="url" placeholder="https://i.imgur.com/example.jpg" />
+        </div>
+
+        <div class="form-group">
+          <label>Описание</label>
+          <textarea rows="5" placeholder="Краткое описание сюжета" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Ссылка на трейлер (YouTube / VK)</label>
+          <input type="url" placeholder="https://youtube.com/watch?v=..." />
+        </div>
+
+        <button type="submit" class="submit-btn">💾 Сохранить</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AnimeZone — made by ./dot</p>
+  </footer>
+</body>
+</html>

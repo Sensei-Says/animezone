@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Редактировать эпизод | AnimeZone</title>
+  <link rel="stylesheet" href="edit-episode.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Anime<span>Zone</span></div>
+    <nav class="nav">
+      <a href="admin.html">← Назад в панель</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="form-container">
+      <h1>Редактирование эпизода</h1>
+      <p class="subtitle">Измени данные серии и управляй источниками видео</p>
+
+      <form class="episode-form" id="episodeForm" method="POST">
+        <!-- Основная информация -->
+        <div class="form-group">
+          <label for="anime">Аниме</label>
+          <select id="anime" name="anime_id">
+            <option value="1" selected>Attack on Titan</option>
+            <option value="2">Demon Slayer</option>
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="episode_number">Номер серии</label>
+            <input id="episode_number" name="episode_number" type="number" value="5" />
+          </div>
+          <div class="form-group">
+            <label for="duration">Длительность (мин.)</label>
+            <input id="duration" name="duration" type="number" value="24" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Название серии</label>
+          <input id="title" name="title" type="text" value="Первая битва" />
+        </div>
+
+        <div class="form-group">
+          <label for="thumbnail_url">Превью (URL)</label>
+          <input id="thumbnail_url" name="thumbnail_url" type="url" value="https://i.imgur.com/ep5.jpg" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" rows="4">Эрен впервые вступает в бой с титаном.</textarea>
+        </div>
+
+        <!-- === Озвучки === -->
+        <section class="video-sources">
+          <h2>Озвучки</h2>
+          <div id="voicesContainer">
+            <div class="source-item">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Название озвучки</label>
+                  <input type="text" name="voice_name[]" value="AniLibria" required />
+                </div>
+                <div class="form-group">
+                  <label>Ссылка на видео</label>
+                  <input type="url" name="voice_url[]" value="https://video.example.com/ep5-anilibria.mp4" required />
+                </div>
+              </div>
+              <button type="button" class="remove-btn">Удалить</button>
+            </div>
+
+            <div class="source-item">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Название озвучки</label>
+                  <input type="text" name="voice_name[]" value="JAM" required />
+                </div>
+                <div class="form-group">
+                  <label>Ссылка на видео</label>
+                  <input type="url" name="voice_url[]" value="https://video.example.com/ep5-jam.mp4" required />
+                </div>
+              </div>
+              <button type="button" class="remove-btn">Удалить</button>
+            </div>
+          </div>
+          <button type="button" id="addVoice" class="add-btn">+ Добавить озвучку</button>
+        </section>
+
+        <!-- === Качества видео === -->
+        <section class="video-quality">
+          <h2>Качество видео</h2>
+          <div id="qualityContainer">
+            <div class="source-item">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Разрешение</label>
+                  <input type="text" name="quality_name[]" value="720p" required />
+                </div>
+                <div class="form-group">
+                  <label>Ссылка</label>
+                  <input type="url" name="quality_url[]" value="https://cdn.example.com/ep5-720p.mp4" required />
+                </div>
+              </div>
+              <button type="button" class="remove-btn">Удалить</button>
+            </div>
+          </div>
+          <button type="button" id="addQuality" class="add-btn">+ Добавить качество</button>
+        </section>
+
+        <button type="submit" class="submit-btn">💾 Сохранить изменения</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AnimeZone — made by ./dot</p>
+  </footer>
+
+  <script>
+    const addVoiceBtn = document.getElementById('addVoice');
+    const voicesContainer = document.getElementById('voicesContainer');
+    const addQualityBtn = document.getElementById('addQuality');
