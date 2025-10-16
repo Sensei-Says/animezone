@@ -1,0 +1,74 @@
+.window-control-buttons {
+  --height: 30px;
+  --gap: 10px;
+  position: relative;
+  width: var(--height);
+  height: var(--height);
+  transition: width 0.3s ease;
+  margin-right: 15px;
+}
+
+.window-control-buttons button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #212832;
+  border-radius: 100%;
+  height: var(--height);
+  aspect-ratio: 1;
+  position: absolute;
+  right: 0;
+  top: calc(50% - var(--height) / 2);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.window-control-buttons button svg {
+  margin: 5px;
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+
+.window-control-buttons:hover .maximize {
+  transform: translateX(calc(-1 * (var(--height) + var(--gap))));
+}
+
+.window-control-buttons .maximize {
+  z-index: 2;
+}
+
+.window-control-buttons .maximize:hover {
+  background: #28C840;
+}
+
+.window-control-buttons:hover .minimize {
+  transform: translateX(calc(-1 * (var(--height) * 2 + var(--gap) * 2)));
+}
+
+.window-control-buttons .minimize {
+  z-index: 1;
+}
+
+.window-control-buttons .minimize:hover {
+  background: #FDBC2E;
+}
+
+.window-control-buttons:hover .close {
+  transform: rotate(135deg);
+}
+
+.window-control-buttons .close:hover {
+  background: #FD5F57;
+}
+
+.window-control-buttons .close {
+  transform: rotate(45deg);
+}
+
+.window-control-buttons:hover {
+  width: calc(var(--height) * 3 + var(--gap) * 2);
+}

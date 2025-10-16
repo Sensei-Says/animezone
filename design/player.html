@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Плеер | AnimeZone</title>
+  <link rel="stylesheet" href="player.css">
+</head>
+<body>
+  <div class="player-wrapper">
+    <video id="animePlayer" poster="https://i.imgur.com/7k3mfsN.jpg">
+      <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+      Ваш браузер не поддерживает HTML5 видео.
+    </video>
+
+    <!-- === Панель управления === -->
+    <div class="controls">
+      <div class="controls-left">
+        <button class="btn" title="Play/Pause">⏯</button>
+        <button class="btn" title="Назад">⏮</button>
+        <button class="btn" title="Вперёд">⏭</button>
+      </div>
+
+      <div class="controls-center">
+        <div class="menu">
+          <button class="btn">🎧 Озвучка ▾</button>
+          <ul class="dropdown">
+            <li>AniLibria</li>
+            <li>JAM</li>
+            <li>Original</li>
+          </ul>
+        </div>
+
+        <div class="menu">
+          <button class="btn">🎞 Серия ▾</button>
+          <ul class="dropdown">
+            <li>1 серия</li>
+            <li>2

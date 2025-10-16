@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+.logo span {
+    color: #ff0066;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+.nav a:hover {
+    color: #ff0066;
+}
+
+.search input {
+    background: #2a2a2a;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    width: 180px;
+}
+.search input:focus {
+    outline: 2px solid #ff0066;
+}
+
+.main {
+    flex: 1;
+    padding: 40px 5%;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff0066;
+    padding-left: 10px;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 10px 15px;
+}
+.card-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+.card-info p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    color: #777;
+}
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav a {
+        margin: 5px 10px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .anime-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .card img {
+        height: 240px;
+    }
+}
