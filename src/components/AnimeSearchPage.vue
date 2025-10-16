@@ -25,20 +25,20 @@
       >
         <div class="result-poster">
           <img
-            :src="getPosterUrl(result.poster.huge)"
-            :alt="result.title"
+            :src="getPosterUrl(result.searchResult.poster.huge)"
+            :alt="result.searchResult.title"
           />
         </div>
         <div class="result-info">
-          <h3 class="result-title">{{ result.title }}</h3>
+          <h3 class="result-title">{{ result.searchResult.title }}</h3>
           <div class="result-meta">
-            <span class="result-type">{{ result.type.name }}</span>
-            <span class="result-year">{{ result.year }}</span>
-            <span class="result-status" :data-status="result.anime_status.title">
-              {{ result.anime_status.title }}
+            <span class="result-type">{{ result.searchResult.type.name }}</span>
+            <span class="result-year">{{ result.searchResult.year }}</span>
+            <span class="result-status" :data-status="result.searchResult.anime_status.title">
+              {{ result.searchResult.anime_status.title }}
             </span>
           </div>
-          <p class="result-description">{{ result.description }}</p>
+          <p class="result-description">{{ result.searchResult.description }}</p>
         </div>
       </div>
     </div>

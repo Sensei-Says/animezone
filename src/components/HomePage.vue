@@ -38,7 +38,7 @@ import { YummyAnimeExtractor } from '@/api/source/Yumme_anime_ru'
 const appStore = useAppStore()
 const { openAnimePage } = appStore
 
-const ongoings = ref([])
+const ongoings = ref<any[]>([])
 
 const openAnime = (url: string) => {
   openAnimePage(url)
@@ -67,8 +67,8 @@ const loadData = async () => {
     }
     
     // Проверяем каждый онгоинг
-    const validOngoings = []
-    const invalidOngoings = []
+    const validOngoings: any[] = []
+    const invalidOngoings: any[] = []
     
     ongoingData.forEach((ongoing, index) => {
       if (ongoing.ongoingResult && ongoing.ongoingResult.title) {

@@ -1,4 +1,4 @@
-import { findExtractor, extractVideos } from "../players/index";
+import { findExtractor, extractVideos, Video as VideoPlayer } from "../players/index";
 import type {
   AnimeStatus,
   AnimeType,
@@ -19,7 +19,7 @@ import type {
 } from "./yummi_anime_types";
 
 // Реэкспортируем типы для удобства
-export type { VideoInfo } from "./yummi_anime_types";
+export type { VideoInfo, Episode } from "./yummi_anime_types";
 
 interface ApiResponse<T> {
   response: T;
@@ -29,7 +29,7 @@ interface Source {
   title: string;
   url: string;
 }
-interface Player {
+export interface Player {
   name: string;
   dubbers: Dubber[];
 }
@@ -224,7 +224,16 @@ export class Anime {
       }
       t[video.data.player].dubbers.forEach((d) => {
         if (d.dubbing === video.data.dubbing) {
-          d.episodes.push(new Video(video));
+          d.episodes.push({
+            video: new VideoPlayer(
+              'auto' as any,
+              'auto' as any,
+              video.iframe_url,
+              {}
+            ),
+            number: video.data.episode || video.number,
+            iframe_url: video.iframe_url
+          });
         }
       });
     });
@@ -232,7 +241,7 @@ export class Anime {
     ans.forEach((player) => {
       player.dubbers.forEach((dubber) => {
         dubber.episodes.sort((a, b) => {
-          return Number(a.video.number) - Number(b.video.number);
+          return Number(a.number) - Number(b.number);
         });
       });
     });

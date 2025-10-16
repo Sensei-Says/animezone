@@ -4,7 +4,7 @@ import { Kodik } from "./kodik";
 // import { SovetRomantica } from "./sovetromantica";
 
 // Экспорт типов и базовых классов
-// export { Video, BaseVideoExtractor } from "./base";
+export { Video, BaseVideoExtractor } from "./base";
 
 // Экспорт конкретных парсеров плееров
 // export { Kodik, Sibnet, SovetRomantica };

@@ -58,8 +58,8 @@ onMounted(async () => {
     const result = await extractor.getOngoings()
     ongoings.value = result
 
-    if (history.value && history.value.length > 0) {
-      const anime = await extractor.getAnime(history.value[0])
+    if (history && history.length > 0) {
+      const anime = await extractor.getAnime(history[0])
       latestAnime.value = anime
     }
   } catch (err) {

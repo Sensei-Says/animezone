@@ -82,12 +82,20 @@ export interface Skips {
 export interface VideoData {
   dubbing: string;
   player: string;
+  quality?: string;
+  episode?: string;
+}
+
+export interface Episode {
+  video: Video;
+  number: string;
+  iframe_url: string;
 }
 
 export interface Dubber {
   dubbing: string;
   player: string;
-  episodes: Video[];
+  episodes: Episode[];
 }
 
 export interface VideoInfo {

@@ -51,7 +51,7 @@
                   class="episode-button"
                   @click="playEpisode(episode)"
                 >
-                  {{ episode.video.number }}
+                  {{ episode.number }}
                 </button>
               </div>
             </div>

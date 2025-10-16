@@ -69,7 +69,7 @@ const openAnime = (anime: Anime) => {
 onMounted(async () => {
   try {
     const extractor = new YummyAnimeExtractor()
-    const animePromises = history.value.map(url => extractor.getAnime(url))
+    const animePromises = history.map(url => extractor.getAnime(url))
     const results = await Promise.all(animePromises)
     historyAnime.value = results
   } catch (err) {

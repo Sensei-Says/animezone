@@ -80,7 +80,7 @@ const removeFromFavourites = (anime: Anime) => {
 onMounted(async () => {
   try {
     const extractor = new YummyAnimeExtractor()
-    const animePromises = favourites.value.map(url => extractor.getAnime(url))
+    const animePromises = favourites.map(url => extractor.getAnime(url))
     const results = await Promise.all(animePromises)
     favouriteAnime.value = results
   } catch (err) {
