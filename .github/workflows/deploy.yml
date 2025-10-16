@@ -29,7 +29,7 @@ jobs:
     - name: Move files to root
       run: |
         # Move built files to root
-        cp dist/* ./
+        cp -r dist/* ./
         # Remove dist directory
         rm -rf dist/
         
