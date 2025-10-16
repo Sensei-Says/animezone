@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Добавить эпизод | AnimeZone</title>
+  <link rel="stylesheet" href="add-episode.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Anime<span>Zone</span></div>
+    <nav class="nav">
+      <a href="admin.html">← Назад в панель</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="form-container">
+      <h1>Добавить эпизод</h1>
+      <p class="subtitle">Заполни поля, чтобы добавить новую серию с несколькими источниками</p>
+
+      <form class="episode-form" id="episodeForm" method="POST">
+        <!-- Основная информация -->
+        <div class="form-group">
+          <label for="anime">Аниме<span class="req">*</span></label>
+          <select id="anime" name="anime_id" required>
+            <option value="">Выберите аниме...</option>
+            <option value="1">Attack on Titan</option>
+            <option value="2">Demon Slayer</option>
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="episode_number">Номер серии</label>
+            <input id="episode_number" name="episode_number" type="number" placeholder="5" required />
+          </div>
+          <div class="form-group">
+            <label for="duration">Длительность (мин.)</label>
+            <input id="duration" name="duration" type="number" placeholder="24" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Название серии</label>
+          <input id="title" name="title" type="text" placeholder="Например: Первая битва" required />
+        </div>
+
+        <div class="form-group">
+          <label for="thumbnail_url">Превью (URL)</label>
+          <input id="thumbnail_url" name="thumbnail_url" type="url" placeholder="https://i.imgur.com/example.jpg" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" rows="4" placeholder="Краткое описание сюжета серии"></textarea>
+        </div>
+
+        <!-- === Блок добавления источников === -->
+        <section class="video-sources">
+          <h2>Источники видео и озвучки</h2>
+          <p class="hint">Добавь одну или несколько озвучек с соответствующими ссылками на видео</p>
+
+          <div id="sourcesContainer" class="sources-container">
+            <div class="source-item">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label>Название озвучки</label>
+                  <input type="text" name="voice_name[]" placeholder="AniLibria" required />
+                </div>
+                <div class="form-group">
+                  <label>Ссылка на видео</label>
+                  <input type="url" name="video_url[]" placeholder="https://video.example.com/ep5-anilibria.mp4" required />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="addSource" class="add-btn">+ Добавить источник</button>
+        </section>
+
+        <button type="submit" class="submit-btn">💾 Сохранить эпизод</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 AnimeZone — made by ./dot</p>
+  </footer>
+
+  <script>
+    const addSourceBtn = document.getElementById('addSource');
+    const container = document.getElementById('sourcesContainer');
+
+    addSourceBtn.addEventListener('click', () => {
+      const block = document.createElement('div');
+      block.classList.add('source-item');
+      block.innerHTML = `
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Название озвучки</label>
+            <input type="text" name="voice_name[]" placeholder="JAM" required />
+          </div>
+          <div class="form-group">
+            <label>Ссылка на видео</label>
+            <input type="url" name="video_url[]" placeholder="https://video.example.com/ep5-jam.mp4" required />
+          </div>
+        </div>
+        <button type="button" class="remove-btn">Удалить</button>
+      `;
+      container.appendChild(block);
+
+      block.querySelector('.remove-btn').addEventListener('click', () => {
+        block.remove();
+      });
+    });
+  </script>
+</body>
+</html>

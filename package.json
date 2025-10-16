@@ -1,0 +1,32 @@
+{
+  "name": "anime-watchlist-vue",
+  "version": "0.3.2",
+  "author": {
+    "name": "sinedka",
+    "email": "dennnn888@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@silvermine/videojs-quality-selector": "^1.3.1",
+    "vue": "^3.4.0",
+    "@vueuse/core": "^10.7.0",
+    "pinia": "^2.1.7",
+    "video.js": "^8.22.0",
+    "vue-router": "^4.2.5",
+    "videojs-contrib-hls": "^5.15.0"
+  },
+  "devDependencies": {
+    "@types/video.js": "^7.3.58",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/tsconfig": "^0.5.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.3.3",
+    "vue-tsc": "^2.0.0"
+  }
+}
