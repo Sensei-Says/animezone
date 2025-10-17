@@ -5,11 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="/anime-watchlist/assets/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AnimeZone</title>
-    <link rel="manifest" href="/anime-watchlist/manifest.json">
-    <meta name="theme-color" content="#ff0066">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="AnimeZone">
     <script type="module" crossorigin src="/anime-watchlist/assets/index-9w_8Z8Ua.js"></script>
     <link rel="modulepreload" crossorigin href="/anime-watchlist/assets/vendor-qYA6LsDu.js">
     <link rel="stylesheet" crossorigin href="/anime-watchlist/assets/index-BnacC4Vl.css">
@@ -23,18 +18,5 @@
         </div>
       </div>
     </div>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then((registration) => {
-              console.log('SW registered: ', registration);
-            })
-            .catch((registrationError) => {
-              console.log('SW registration failed: ', registrationError);
-            });
-        });
-      }
-    </script>
   </body>
 </html>
